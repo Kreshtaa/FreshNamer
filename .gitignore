@@ -1,0 +1,18 @@
+# PyInstaller build folders
+build/
+dist/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+*.log*
+
+# AppImage / release artifacts
+*.AppImage
+*.tar.gz
+*.zip
+*.app
+*.exe
