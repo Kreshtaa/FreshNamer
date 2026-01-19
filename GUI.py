@@ -27,16 +27,13 @@ from PyQt6.QtWidgets import (
     QMessageBox,
     QStyleOptionButton,
     QStyle,
-    QAplication,
+    QApplication,
 )
 from PyQt6.QtGui import QAction, QActionGroup, QShortcut, QKeySequence
 from PyQt6.QtCore import Qt, QSize, QSettings, QTimer, QPropertyAnimation
 
 from core import CATEGORY_MAP, build_name_normal, build_name_advanced
 
-app = QApplication([]) 
-app.setApplicationName("FreshNamer") 
-app.setOrganizationName("Kreshtaa")
 
 class CheckBoxHeader(QHeaderView):
     def __init__(self, parent=None, window=None):
