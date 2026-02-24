@@ -1,7 +1,7 @@
 # FreshNamer
 
 FreshNamer is a clean, cross-platform batch renaming tool built with Python and PyQt6. It helps you rename large sets of files quickly using simple presets or advanced formatting patterns - all in a relatively simple offline GUI.
-
+Disclaimer: This project was built using AI but implemented by yours truly. Do with that as you will.
 
 ## Features:
 
@@ -11,7 +11,7 @@ FreshNamer is a clean, cross-platform batch renaming tool built with Python and 
 - Live preview of output names
 - Multi-category configuration (image, video, audio, GIF, document)
 - Fully offline - no data leaves your machine
-- Cross-platform builds for Linux, macOS, and Windows
+- Cross-platform builds for Linux, macOS, and Windows coming soon
 
 
 ## Platforms:
@@ -40,18 +40,19 @@ Platform-specific installation instructions are as follows:
 
 ### Windows:
 
-Download FreshNamer.exe and run it.
+Download FreshNamer.exe and double click the downloaded file to run it.
+If you receive a warning along the lines of "This file is from an untrusted developer" you can safely ignore it, it's just because I am not paying that much money for a signing certificate.
 
 
 ### macOS:
 
-Download the .app bundle, move it to Applications, and open it.
+Download the .app bundle, move it to Applications, and open it. Follow the typical MacOS procedure for running unsigned apps.
 
 
 ## Development:
 
 FreshNamer is built with Python 3, PyQt6, and PyInstaller.
-
+Further development is extremely unlikely.
 
 ## To run from source:  
 
