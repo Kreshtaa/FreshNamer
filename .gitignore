@@ -1,18 +1,36 @@
 # PyInstaller build folders
 build/
 dist/
+dist-linux/
+*.spec.bak
 
-# Python cache
+# Python cache and environments
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+env/
+.env
 
-# Logs
+# Logs and temp files
 logs/
 *.log*
+.DS_Store
+*.swp
+*.swo
 
-# AppImage / release artifacts
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Release artifacts
 *.AppImage
 *.tar.gz
 *.zip
 *.app
 *.exe
+*.dmg
