@@ -14,70 +14,30 @@ FreshNamer is a clean, cross-platform batch renaming tool built with Python and 
 - Undo support (multi-level undo stack)
 - Fully offline—no data leaves your machine
 
-## Building from Source
+## Building and Running
 
-### Prerequisites
+### Requirements
 
 - Python 3.9+
 - PyQt6
-- PyInstaller
+- PyInstaller for packaging
 
-### Install Dependencies
+### Run from source
 
 ```bash
 pip install -r requirements.txt
-pip install pyinstaller
-```
-
-### Run from Source
-
-```bash
 python GUI.py
 ```
 
-### Build Standalone Executable
+### Build a standalone app
 
-#### macOS
-
-```bash
-pyinstaller FreshNamer.spec
-```
-
-Output: `dist/FreshNamer/FreshNamer` (ready to run, double-click or execute from terminal)
-
-> For release packaging, zip the `dist/FreshNamer` folder and upload the archive to GitHub Releases.
-
-#### Linux
-
-On a Linux machine, run the same command:
+FreshNamer includes a PyInstaller spec file for generating a standalone executable.
 
 ```bash
 pyinstaller FreshNamer.spec
 ```
 
-Output: `dist/FreshNamer/FreshNamer` (standalone binary, no dependencies needed)
-
-#### Windows
-
-On Windows, use:
-
-```bash
-pyinstaller FreshNamer.spec
-```
-
-Output: `dist/FreshNamer/FreshNamer.exe`
-
-### Cross-Platform Building with Docker
-
-To build a Linux binary on macOS or Windows:
-
-```bash
-docker build -t freshnamer-builder .
-docker run --rm -v $(pwd):/app freshnamer-builder
-```
-
-Output: `dist-linux/FreshNamer/FreshNamer`
-
+After building, the bundled executable appears under `dist/FreshNamer/`.
 
 ## Project Architecture
 
