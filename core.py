@@ -73,13 +73,13 @@ def build_name_advanced(
         {category}      → category key (image, video, etc.)
         {folder}        → parent folder path
     """
-    log.debug(f"[NAME_ADV] pattern='{pattern}' original='{original_name}' index={index} padded='{num_padded}'")
-
     # Build padded index
     if padding > 0:
         num_padded = f"{index:0{padding}d}"
     else:
         num_padded = str(index)
+
+    log.debug(f"[NAME_ADV] pattern='{pattern}' original='{original_name}' index={index} padded='{num_padded}'")
 
     return pattern.format(
         original=original_name,

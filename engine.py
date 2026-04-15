@@ -91,9 +91,9 @@ def _build_single_category_plan(
         ext = file_path.suffix
 
         # Build new base name
-        if cfg["advanced_mode"] and cfg["advanced_text"]:
+        if cfg["mode"] == "advanced" and cfg["advanced"]:
             new_base = build_name_advanced(
-                pattern=cfg["advanced_text"],
+                pattern=cfg["advanced"],
                 original_name=base_name,
                 index=counter,
                 padding=cfg["padding"],
@@ -292,7 +292,7 @@ def undo_last_rename() -> Tuple[int, List[str]]:
     log.debug(f"[UNDO] Undo stack size before pop: {len(_undo_stack) + 1}")
 
     # Keep ordering consistent
-    last_plan.operations.sort(key=lambda op: op.old_path.name.lower())
+    # last_plan.operations.sort(key=lambda op: op.old_path.name.lower())  # Removed to preserve original execution order
 
     # Reverse operations
     reversed_ops = [

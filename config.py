@@ -13,9 +13,6 @@ def build_config_from_gui(gui) -> dict:
         enabled = widgets["enabled"].isChecked()
         mode = "advanced" if widgets["advanced_mode"].isChecked() else "normal"
         log.debug(f"[CONFIG] Category '{cat_key}' enabled={enabled} mode={mode}")
-        log.debug(f"[CONFIG] Normal mode: prefix='{prefix}' suffix='{suffix}' padding={padding} start={start}")
-        log.debug(f"[CONFIG] Advanced mode: pattern='{fmt}' start={start}")
-        log.error(f"[CONFIG] Invalid format string for '{cat_key}': {e}")
 
         # Normal mode
         if mode == "normal":
@@ -23,6 +20,8 @@ def build_config_from_gui(gui) -> dict:
             suffix = widgets["suffix"].text()
             padding = int(widgets["padding"].currentText())
             start = int(widgets["start"].value())
+
+            log.debug(f"[CONFIG] Normal mode: prefix='{prefix}' suffix='{suffix}' padding={padding} start={start}")
 
             return {
                 "enabled": enabled,
@@ -37,10 +36,21 @@ def build_config_from_gui(gui) -> dict:
         fmt = widgets["advanced_text"].text()
         start = int(widgets["start"].value())
 
+        log.debug(f"[CONFIG] Advanced mode: pattern='{fmt}' start={start}")
+
         # Validate advanced format string
         try:
-            fmt.format(num=1)
+            fmt.format(
+                original="test",
+                num=1,
+                num_padded="01",
+                prefix="",
+                suffix="",
+                category="test",
+                folder="/test"
+            )
         except Exception as e:
+            log.error(f"[CONFIG] Invalid format string for '{cat_key}': {e}")
             raise ValueError(f"Invalid format string for '{cat_key}': {e}")
         
         return {
