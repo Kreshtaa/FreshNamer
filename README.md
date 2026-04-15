@@ -45,6 +45,8 @@ pyinstaller FreshNamer.spec
 
 Output: `dist/FreshNamer/FreshNamer` (ready to run, double-click or execute from terminal)
 
+> For release packaging, zip the `dist/FreshNamer` folder and upload the archive to GitHub Releases.
+
 #### Linux
 
 On a Linux machine, run the same command:
